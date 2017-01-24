@@ -1,0 +1,1054 @@
+{
+  "tiles": [
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "turnTile",
+        "rotation": 270
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "turnTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "helipadTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "turnTile",
+        "rotation": 270
+      },
+      {
+        "sprite": "turnTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "officeTwoTile",
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": "threeWayTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "parkingTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "helipadLightTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "parkingTile",
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "turnTile",
+        "rotation": 270
+      },
+      {
+        "sprite": "threeWayTile",
+        "rotation": 270
+      },
+      {
+        "sprite": "threeWayTile",
+        "rotation": 270
+      },
+      {
+        "sprite": "threeWayTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "threeWayTile",
+        "rotation": 270
+      },
+      {
+        "sprite": "turnTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "straightTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "officeTile",
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "schoolTile",
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "straightTile",
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "threeWayTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "fourWayTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "threeWayTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "threeWayTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "threeWayTile",
+        "rotation": 270
+      },
+      {
+        "sprite": "turnTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "straightTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "parkingTile",
+        "rotation": 180
+      },
+      {
+        "sprite": "parkingTile",
+        "rotation": 180
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "turnTile",
+        "rotation": 180
+      },
+      {
+        "sprite": "threeWayTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "threeWayTile",
+        "rotation": 270
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "straightTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "threeWayTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "turnTile",
+        "rotation": 90
+      }
+    ],
+    [
+      {
+        "sprite": "grassTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "parkingTile",
+        "rotation": 180
+      },
+      {
+        "sprite": "houseThreeTile",
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": "houseTile",
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": "houseTwoTile",
+        "rotation": 0
+      },
+      {
+        "sprite": null,
+        "rotation": 0
+      },
+      {
+        "sprite": "parkingTile",
+        "rotation": 180
+      },
+      {
+        "sprite": "helipadLightTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "beachCornerTile",
+        "rotation": 180
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 180
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 180
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 180
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 180
+      },
+      {
+        "sprite": "beachCornerTile",
+        "rotation": 270
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "islandTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "islandTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "islandTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "islandTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 270
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "islandTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "islandTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "islandTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "helipadTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 270
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "islandTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "islandTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "islandTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "islandTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 270
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "beachCornerTile",
+        "rotation": 90
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "beachTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "beachCornerTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ],
+    [
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      },
+      {
+        "sprite": "waterTile",
+        "rotation": 0
+      }
+    ]
+  ]
+}
