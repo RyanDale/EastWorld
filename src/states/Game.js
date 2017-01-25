@@ -1,6 +1,7 @@
 import {Phaser, Point} from 'phaser'
 import LevelLoader from '../classes/LevelLoader'
 import Player from '../sprites/Player'
+import AI from '../sprites/AI'
 
 export default class extends Phaser.State {
     preload() {
@@ -32,9 +33,12 @@ export default class extends Phaser.State {
         shift.onDown.add(() => this.player.cycleWeapon(), this);
         let enter = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
         enter.onDown.add(() => this.player.shootWeapon(), this);
+        this.game.world.scale.setTo(.35);
 
         this.physics.startSystem(Phaser.Physics.P2JS);
         this.physics.p2.enable(this.player);
+
+        _.times(200, () => this.game.add.existing(new AI(this.game, 'player_sprite', 'idle')));
     }
 
     update() {
