@@ -23,10 +23,10 @@ export default class extends Phaser.State {
 
     // Bullets
     this.load.image('bomb', 'assets/images/bullets/bomb.png');
-    this.load.image('flame', 'assets/images/bullets/flame.png');
-    this.load.image('m4Ammo', 'assets/images/bullets/m4-ammo.png');
-    this.load.image('missile', 'assets/images/bullets/missile.png');
-    this.load.image('uziBullet', 'assets/images/bullets/uzi-bullet.png');
+    this.load.image('flameBullet', 'assets/images/bullets/flameBullet.png');
+    this.load.image('m4Bullet', 'assets/images/bullets/m4Bullet.png');
+    this.load.image('rocketBullet', 'assets/images/bullets/rocketBullet.png');
+    this.load.image('uziBullet', 'assets/images/bullets/uziBullet.png');
 
     this.load.image('grassTile', 'assets/images/tiles/Grass.png');
     this.load.image('straightTile', 'assets/images/tiles/straight.png');
