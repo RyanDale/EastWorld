@@ -38,11 +38,15 @@ export default class AI extends Player {
 
     /* Find points surrounding the AI */
     findPoints() {
-        const spacing = 512,
-            fullSpacing =  1024;
-        let rectangle = new Rectangle(this.position.x - spacing, this.position.y - spacing, this.width + fullSpacing,
-            this.height + fullSpacing);
-        return _.filter(Waypoint.wayPoints, wayPoint => rectangle.contains(wayPoint.position.x, wayPoint.position.y));
+        const spacing = 512;
+        let rectangle1 = new Rectangle(this.position.x, this.position.y + spacing, this.width, this.height),
+            rectangle2 = new Rectangle(this.position.x + spacing, this.position.y, this.width, this.height),
+            rectangle3 = new Rectangle(this.position.x, this.position.y - spacing, this.width, this.height),
+            rectangle4 = new Rectangle(this.position.x - spacing, this.position.y, this.width, this.height);
+        return _.filter(Waypoint.wayPoints, wayPoint => rectangle1.contains(wayPoint.position.x, wayPoint.position.y) ||
+            rectangle2.contains(wayPoint.position.x, wayPoint.position.y) ||
+            rectangle3.contains(wayPoint.position.x, wayPoint.position.y) ||
+            rectangle4.contains(wayPoint.position.x, wayPoint.position.y));
     }
 
     generateNewTarget() {
