@@ -23,9 +23,11 @@ export default class extends Phaser.State {
         banner.smoothed = false;
         banner.anchor.setTo(0.5);
 
-        let playerSprite = new Player(this.game, this.game.world.centerX, this.game.world.centerY, 'player_sprite', 'idle');
+        let playerSprite = new Player(this.game, this.game.world.centerX, this.game.world.centerY - 2048, 'player_sprite', 'idle');
         this.game.add.existing(playerSprite);
         this.player = playerSprite;
+
+        this.game.time.advancedTiming = true;
 
         this.camera.follow(playerSprite);
 
@@ -38,7 +40,12 @@ export default class extends Phaser.State {
         this.physics.startSystem(Phaser.Physics.P2JS);
         this.physics.p2.enable(this.player);
 
-        _.times(200, () => this.game.add.existing(new AI(this.game, 'player_sprite', 'idle')));
+        this.game.physics.startSystem(Phaser.Physics.ARCADE);
+        _.times(25, () => {
+            let ai = this.game.add.existing(new AI(this.game, 'player_sprite', 'idle'));
+            this.physics.arcade.enable(ai);
+            ai.movePlayer();
+        });
     }
 
     update() {
@@ -64,6 +71,7 @@ export default class extends Phaser.State {
     render() {
         if (__DEV__) {
             this.game.debug.cameraInfo(this.camera, 32, 32);
+            this.game.debug.text(this.game.time.fps, 32, 128)
         }
     }
 }

@@ -43,12 +43,12 @@ export default class Player extends Phaser.Sprite {
         }
     }
 
-    startWalking() {
+    startWalking(repeat = false) {
         let activeWeaponName = _.get(this, 'activeWeapon.name');
         if (activeWeaponName) {
-            this.animations.play(activeWeaponName, 8, false);
+            this.animations.play(activeWeaponName, 8, repeat);
         } else {
-            this.animations.play('walking', 8, false);
+            this.animations.play('walking', 8, repeat);
         }
     }
 
