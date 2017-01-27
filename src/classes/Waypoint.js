@@ -10,7 +10,7 @@ class WayPoint {
     }
 
     static random() {
-        return _.sample(wayPoints);
+        return _.sample(WayPoint.wayPoints);
     }
 
     static randomWalkable() {
