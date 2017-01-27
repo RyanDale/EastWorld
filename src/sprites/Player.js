@@ -95,9 +95,8 @@ class Player extends Human {
 
     update() {
         if (this.weapon) {
-            this.game.physics.arcade.overlap(this.weapon.bullets, AI.ai, (enemy, bullet) => {
+            this.game.physics.arcade.overlap(this.weapon.bullets, _.filter(AI.ai, 'alive'), (enemy, bullet) => {
                 let removeEnemy = () => {
-                    console.log('enemy', enemy);
                     enemy.kill();
                 };
                 bullet.kill();
