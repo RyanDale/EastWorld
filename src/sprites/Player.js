@@ -35,6 +35,8 @@ class Player extends Human {
         this.animations.add('flame', Phaser.Animation.generateFrameNames('flame', 1, 4), 8, true);
 
         this.animations.add('idle', ['idle'], 8, false);
+
+        this.animations.add('explosion', Phaser.Animation.generateFrameNames('explosion', 1, 4), 8, true);
     }
 
     startAnimation(animation) {
@@ -93,9 +95,14 @@ class Player extends Human {
 
     update() {
         if (this.weapon) {
-            this.game.physics.arcade.overlap(this.weapon.bullets, AI.ai, (bullet, enemy) => {
+            this.game.physics.arcade.overlap(this.weapon.bullets, AI.ai, (enemy, bullet) => {
+                let removeEnemy = () => {
+                    console.log('enemy', enemy);
+                    enemy.kill();
+                };
                 bullet.kill();
-                enemy.kill();
+                enemy.killPlayer();
+                this.game.time.events.add(Phaser.Timer.SECOND * 5, removeEnemy, this);
             });
         }
     }

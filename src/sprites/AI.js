@@ -59,6 +59,9 @@ export default class AI extends Human {
     }
 
     update() {
+        if (!this.alive) {
+            return;
+        }
         this.angle = 90 + Math.atan2(this.wayPoint.position.y - this.y, this.wayPoint.position.x - this.x) *
             (180 / Math.PI);
 

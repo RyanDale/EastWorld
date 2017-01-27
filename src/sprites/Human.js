@@ -33,13 +33,17 @@ class Human extends Phaser.Sprite {
         this.animations.add('flame', Phaser.Animation.generateFrameNames('flame', 1, 4), 8, true);
 
         this.animations.add('idle', ['idle'], 8, false);
+
+        this.animations.add('explosion', Phaser.Animation.generateFrameNames('explosion', 1, 36), 8, true);
     }
 
-    startAnimation(animation) {
+    startAnimation(animation, repeat = false) {
         switch (animation) {
             case 'walking':
-                this.startWalking();
+                this.startWalking(repeat);
                 break;
+            default:
+                this.animations.play(animation, 8, repeat);
         }
     }
 
@@ -50,6 +54,13 @@ class Human extends Phaser.Sprite {
         } else {
             this.animations.play('walking', 8, repeat);
         }
+    }
+
+    killPlayer() {
+        this.body.velocity.x = 0;
+        this.body.velocity.y = 0;
+        this.startAnimation('dying');
+        this.alive = false;
     }
 }
 

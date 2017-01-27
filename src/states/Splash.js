@@ -49,6 +49,8 @@ export default class extends Phaser.State {
     this.load.image('houseTwoTile', 'assets/images/tiles/houseTwo.png');
     this.load.image('houseThreeTile', 'assets/images/tiles/houseThree.png');
 
+    this.load.image('explosion', 'assets/images/explosion_sprites.png');
+
     // Load explosions
     _.times(36, i => this.load.image(`explosion${(i + 1)}`, `assets/images/explosion/Explosion${(i + 1)}.png`));
 

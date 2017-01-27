@@ -22,8 +22,17 @@ export default class extends Phaser.State {
         banner.fill = '#77BFA3';
         banner.smoothed = false;
         banner.anchor.setTo(0.5);
+        //this.game.world.scale.setTo(.35);
 
-        let playerSprite = new Player(this.game, this.game.world.centerX, this.game.world.centerY - 2048, 'player_sprite', 'idle');
+        this.game.physics.startSystem(Phaser.Physics.ARCADE);
+        _.times(25, () => {
+            let ai = this.game.add.existing(new AI(this.game, 'player_sprite', 'idle'));
+            this.physics.arcade.enable(ai);
+            ai.movePlayer();
+        });
+
+        let playerSprite = new Player(this.game, this.game.world.centerX, this.game.world.centerY - 2048,
+            'player_sprite', 'idle');
         this.game.add.existing(playerSprite);
         this.player = playerSprite;
 
@@ -35,17 +44,11 @@ export default class extends Phaser.State {
         shift.onDown.add(() => this.player.cycleWeapon(), this);
         let enter = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
         enter.onDown.add(() => this.player.shootWeapon(), this);
-        this.game.world.scale.setTo(.35);
 
         this.physics.startSystem(Phaser.Physics.P2JS);
         this.physics.p2.enable(this.player);
 
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
-        _.times(25, () => {
-            let ai = this.game.add.existing(new AI(this.game, 'player_sprite', 'idle'));
-            this.physics.arcade.enable(ai);
-            ai.movePlayer();
-        });
+
     }
 
     update() {
