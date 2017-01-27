@@ -1,0 +1,770 @@
+{
+  "frames": [
+    {
+      "filename": "explosion1",
+      "frame": {
+        "x": 0,
+        "y": 129,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion2",
+      "frame": {
+        "x": 258,
+        "y": 516,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion3",
+      "frame": {
+        "x": 129,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion4",
+      "frame": {
+        "x": 129,
+        "y": 129,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion5",
+      "frame": {
+        "x": 0,
+        "y": 258,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion6",
+      "frame": {
+        "x": 129,
+        "y": 258,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion7",
+      "frame": {
+        "x": 258,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion8",
+      "frame": {
+        "x": 258,
+        "y": 129,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion9",
+      "frame": {
+        "x": 258,
+        "y": 258,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion10",
+      "frame": {
+        "x": 0,
+        "y": 387,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion11",
+      "frame": {
+        "x": 129,
+        "y": 387,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion12",
+      "frame": {
+        "x": 258,
+        "y": 387,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion13",
+      "frame": {
+        "x": 387,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion14",
+      "frame": {
+        "x": 387,
+        "y": 129,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion15",
+      "frame": {
+        "x": 387,
+        "y": 258,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion16",
+      "frame": {
+        "x": 387,
+        "y": 387,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion17",
+      "frame": {
+        "x": 0,
+        "y": 516,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion18",
+      "frame": {
+        "x": 129,
+        "y": 516,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion19",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion20",
+      "frame": {
+        "x": 387,
+        "y": 516,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion21",
+      "frame": {
+        "x": 516,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion22",
+      "frame": {
+        "x": 516,
+        "y": 129,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion23",
+      "frame": {
+        "x": 516,
+        "y": 258,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion24",
+      "frame": {
+        "x": 516,
+        "y": 387,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion25",
+      "frame": {
+        "x": 516,
+        "y": 516,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion26",
+      "frame": {
+        "x": 0,
+        "y": 645,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion27",
+      "frame": {
+        "x": 129,
+        "y": 645,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion28",
+      "frame": {
+        "x": 258,
+        "y": 645,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion29",
+      "frame": {
+        "x": 387,
+        "y": 645,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion30",
+      "frame": {
+        "x": 516,
+        "y": 645,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion31",
+      "frame": {
+        "x": 645,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion32",
+      "frame": {
+        "x": 645,
+        "y": 129,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion33",
+      "frame": {
+        "x": 645,
+        "y": 258,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion34",
+      "frame": {
+        "x": 645,
+        "y": 387,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion35",
+      "frame": {
+        "x": 645,
+        "y": 516,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    },
+    {
+      "filename": "explosion36",
+      "frame": {
+        "x": 645,
+        "y": 645,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      }
+    }
+  ],
+  "meta": {
+    "app": "https://www.leshylabs.com/apps/sstool/",
+    "version": "Leshy SpriteSheet Tool v0.8.4",
+    "image": "explosion.png",
+    "size": {
+      "w": 773,
+      "h": 773
+    },
+    "scale": 1
+  }
+}
