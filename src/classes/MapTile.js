@@ -14,7 +14,7 @@ export default class MapTile extends Phaser.Sprite {
             new Waypoint(x - offset + this.width, y - offset);
             new Waypoint(x - offset, y - offset + this.height);
             new Waypoint(x - offset + this.width, y - offset + this.height);
-        } else {
+        } else if (key) {
             this.collide = true;
         }
     }
