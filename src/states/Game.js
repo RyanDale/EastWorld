@@ -11,9 +11,9 @@ export default class extends Phaser.State {
     create() {
         const bannerText = 'EastWorld';
         let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText);
-
-        let levelLoader = new LevelLoader(this);
-        this.world.setBounds(-256, -256, 5120, 5120 + 4096 + 2048 + 1024);
+        this.game.physics.startSystem(Phaser.Physics.ARCADE);
+        this.levelLoader = new LevelLoader(this);
+        this.world.setBounds(-256, -256, 5120, 5120 + 4096 + 2048 + 1024 + 256);
         this.cursors = this.input.keyboard.createCursorKeys();
 
         banner.font = 'Roboto';
@@ -24,7 +24,6 @@ export default class extends Phaser.State {
         banner.anchor.setTo(0.5);
         //this.game.world.scale.setTo(.35);
 
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
         _.times(25, () => {
             let ai = this.game.add.existing(new AI(this.game, 'player_sprite', 'idle'));
             this.physics.arcade.enable(ai);
@@ -45,36 +44,37 @@ export default class extends Phaser.State {
         let enter = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
         enter.onDown.add(() => this.player.shootWeapon(), this);
 
-        this.physics.startSystem(Phaser.Physics.P2JS);
-        this.physics.p2.enable(this.player);
-
-
+        this.physics.arcade.enable(this.player);
+        this.physics.enable(this.player, Phaser.Physics.ARCADE);
     }
 
     update() {
-        this.player.body.setZeroVelocity();
-
+        this.player.body.velocity.setTo(0, 0);
+        this.player.body.angularVelocity = 0;
         if (this.cursors.up.isDown) {
-            this.player.body.moveForward(300);
-            this.player.startAnimation('walking');
-        }
-        else if (this.cursors.down.isDown) {
-            this.player.body.moveBackward(300);
+            this.player.body.velocity.copyFrom(this.game.physics.arcade.velocityFromAngle(this.player.angle, 300));
             this.player.startAnimation('walking');
         }
 
         if (this.cursors.left.isDown) {
-            this.player.body.rotation -= .05;
+            this.player.body.angularVelocity = -300;
         }
         else if (this.cursors.right.isDown) {
-            this.player.body.rotation += .05;
+            this.player.body.angularVelocity = 300;
         }
+        else {
+            this.player.body.angularVelocity = 0;
+        }
+
+        this.physics.arcade.collide(this.player, _.filter(this.levelLoader.tiles, 'collide'), () => {}, null, this);
     }
 
     render() {
         if (__DEV__) {
             this.game.debug.cameraInfo(this.camera, 32, 32);
-            this.game.debug.text(this.game.time.fps, 32, 128)
+            this.game.debug.text(this.game.time.fps, 32, 128);
+            this.game.debug.body(this.player);
+            this.levelLoader.tiles.filter(tile => tile.collide).forEach(tile => this.game.debug.body(tile));
         }
     }
 }

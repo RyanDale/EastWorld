@@ -88,7 +88,7 @@ class Player extends Human {
         if (!this.activeWeapon.name) {
             return;
         }
-        this.weapon.fireAngle = this.game.math.radToDeg(this.body.rotation) - 90;
+        this.weapon.fireAngle = this.body.rotation - 90;
         this.weapon.trackSprite(this, 0, 0);
         this.bullet = this.weapon.fire();
     }
