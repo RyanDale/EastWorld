@@ -12,25 +12,16 @@ class Human extends Phaser.Sprite {
             'rocket',
             'uzi'
         ];
-        this.loadAnimations();
     }
 
     loadAnimations() {
-        this.animations.add('walking', Phaser.Animation.generateFrameNames('walking', 1, 4), 8, true);
-        this.animations.add('dying', Phaser.Animation.generateFrameNames('dying', 1, 2), 8, true);
-        this.animations.add('rocket', Phaser.Animation.generateFrameNames('rocket', 1, 5), 8, true);
-        this.animations.add('punch', Phaser.Animation.generateFrameNames('punch', 1, 4), 8, true);
-        this.animations.add('uzi', Phaser.Animation.generateFrameNames('uzi', 1, 5), 8, true);
+        this.animations.add('walking', Phaser.Animation.generateFrameNames('walking_', 1, 4), 8, true);
+        this.animations.add('dying', Phaser.Animation.generateFrameNames('dying_', 1, 2), 8, true);
+        this.animations.add('rocket', Phaser.Animation.generateFrameNames('rocket_', 1, 5), 8, true);
+        this.animations.add('punch', Phaser.Animation.generateFrameNames('punch_', 1, 4), 8, true);
+        this.animations.add('uzi', Phaser.Animation.generateFrameNames('uzi_', 1, 5), 8, true);
         this.animations.add('m4', Phaser.Animation.generateFrameNames('m4_', 1, 4), 8, true);
-        this.animations.add('flame', Phaser.Animation.generateFrameNames('flame', 1, 4), 8, true);
-
-        this.animations.add('walking', Phaser.Animation.generateFrameNames('walking', 1, 4), 8, true);
-        this.animations.add('dying', Phaser.Animation.generateFrameNames('dying', 1, 2), 8, true);
-        this.animations.add('rocket', Phaser.Animation.generateFrameNames('rocket', 1, 5), 8, true);
-        this.animations.add('punch', Phaser.Animation.generateFrameNames('punch', 1, 4), 8, true);
-        this.animations.add('uzi', Phaser.Animation.generateFrameNames('uzi', 1, 5), 8, true);
-        this.animations.add('m4', Phaser.Animation.generateFrameNames('m4_', 1, 4), 8, true);
-        this.animations.add('flame', Phaser.Animation.generateFrameNames('flame', 1, 4), 8, true);
+        this.animations.add('flame', Phaser.Animation.generateFrameNames('flame_', 1, 5), 8, true);
 
         this.animations.add('idle', ['idle'], 8, false);
 

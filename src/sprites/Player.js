@@ -17,28 +17,6 @@ class Player extends Human {
         this.loadAnimations();
     }
 
-    loadAnimations() {
-        this.animations.add('walking', Phaser.Animation.generateFrameNames('walking', 1, 4), 8, true);
-        this.animations.add('dying', Phaser.Animation.generateFrameNames('dying', 1, 2), 8, true);
-        this.animations.add('rocket', Phaser.Animation.generateFrameNames('rocket', 1, 5), 8, true);
-        this.animations.add('punch', Phaser.Animation.generateFrameNames('punch', 1, 4), 8, true);
-        this.animations.add('uzi', Phaser.Animation.generateFrameNames('uzi', 1, 5), 8, true);
-        this.animations.add('m4', Phaser.Animation.generateFrameNames('m4_', 1, 4), 8, true);
-        this.animations.add('flame', Phaser.Animation.generateFrameNames('flame', 1, 4), 8, true);
-
-        this.animations.add('walking', Phaser.Animation.generateFrameNames('walking', 1, 4), 8, true);
-        this.animations.add('dying', Phaser.Animation.generateFrameNames('dying', 1, 2), 8, true);
-        this.animations.add('rocket', Phaser.Animation.generateFrameNames('rocket', 1, 5), 8, true);
-        this.animations.add('punch', Phaser.Animation.generateFrameNames('punch', 1, 4), 8, true);
-        this.animations.add('uzi', Phaser.Animation.generateFrameNames('uzi', 1, 5), 8, true);
-        this.animations.add('m4', Phaser.Animation.generateFrameNames('m4_', 1, 4), 8, true);
-        this.animations.add('flame', Phaser.Animation.generateFrameNames('flame', 1, 4), 8, true);
-
-        this.animations.add('idle', ['idle'], 8, false);
-
-        this.animations.add('explosion', Phaser.Animation.generateFrameNames('explosion', 1, 4), 8, true);
-    }
-
     startAnimation(animation) {
         switch (animation) {
             case 'walking':
@@ -88,7 +66,7 @@ class Player extends Human {
         if (!this.activeWeapon.name) {
             return;
         }
-        this.weapon.fireAngle = this.body.rotation - 90;
+        this.weapon.fireAngle = this.body.rotation;
         this.weapon.trackSprite(this, 0, 0);
         this.bullet = this.weapon.fire();
     }

@@ -13,6 +13,7 @@ export default class AI extends Human {
             AI.ai = [];
         }
         AI.ai.push(this);
+        this.loadAnimations();
     }
 
     movePlayer() {
@@ -62,8 +63,7 @@ export default class AI extends Human {
         if (!this.alive) {
             return;
         }
-        this.angle = 90 + Math.atan2(this.wayPoint.position.y - this.y, this.wayPoint.position.x - this.x) *
-            (180 / Math.PI);
+        this.angle = Math.atan2(this.wayPoint.position.y - this.y, this.wayPoint.position.x - this.x) * (180 / Math.PI);
 
         if (new Rectangle(this.wayPoint.position.x - 4, this.wayPoint.position.y - 4, 8, 8).contains(this.position.x,
                 this.position.y)) {
