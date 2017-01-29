@@ -1,4 +1,4 @@
-import Phaser from 'phaser'
+import {Phaser, Sprite} from 'phaser'
 
 class Human extends Phaser.Sprite {
     constructor(game, x, y, asset, frame) {
@@ -52,6 +52,10 @@ class Human extends Phaser.Sprite {
         this.body.velocity.y = 0;
         this.startAnimation('dying');
         this.alive = false;
+        let bloodSplatter = new Sprite(this.game, 0, 0, `blood${this.game.rnd.integerInRange(1, 3)}`);
+        bloodSplatter.anchor.setTo(0.5, 0.5);
+        bloodSplatter.angle = this.game.rnd.integerInRange(0, 359);
+        this.addChild(bloodSplatter);
     }
 }
 
