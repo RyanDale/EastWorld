@@ -9,6 +9,7 @@ export default class extends Phaser.State {
     }
 
     create() {
+        //this.game.world.scale.setTo(.35);
         const bannerText = 'EastWorld';
         let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText);
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -22,7 +23,6 @@ export default class extends Phaser.State {
         banner.fill = '#77BFA3';
         banner.smoothed = false;
         banner.anchor.setTo(0.5);
-        //this.game.world.scale.setTo(.35);
 
         _.times(25, () => {
             let ai = this.game.add.existing(new AI(this.game, 'player_sprite', 'idle'));
@@ -67,6 +67,7 @@ export default class extends Phaser.State {
         }
 
         this.physics.arcade.collide(this.player, _.filter(this.levelLoader.tiles, 'collide'), () => {}, null, this);
+        this.physics.arcade.collide(this.player, this.levelLoader.vehicles, () => {}, null, this);
     }
 
     render() {

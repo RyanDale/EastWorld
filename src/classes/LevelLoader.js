@@ -1,4 +1,5 @@
 import MapTile from './MapTile'
+import Vehicle from '../sprites/Vehicle'
 
 export default class LevelLoader {
     constructor(game) {
@@ -11,6 +12,7 @@ export default class LevelLoader {
             scaler = 512;
 
         this.tiles = [];
+        this.vehicles = [];
 
         _.each(level.tiles, (tileRow, rowIndex) => {
             _.each(tileRow, (tile, colIndex) => {
@@ -21,6 +23,46 @@ export default class LevelLoader {
                 mapTile.enableCollision();
                 this.tiles.push(mapTile);
             });
+        });
+        let vehicleList = [
+            {
+                sprite: 'car',
+                x: 4212,
+                y: 5632,
+                rotation: 0
+            },
+            {
+                sprite: 'pagani',
+                x: 3996,
+                y: 5632,
+                rotation: 0
+            },
+            {
+                sprite: 'hyundai',
+                x: 400,
+                y: 5632,
+                rotation: 0
+            },
+            {
+                sprite: 'police_car',
+                x: 1150,
+                y: 2074,
+                rotation: 0
+
+            },
+            {
+                sprite: 'atv',
+                x: 620,
+                y: 5632,
+                rotation: 0
+            },
+        ];
+        _.each(vehicleList, config => {
+            let vehicle = new Vehicle(this.game, config.x, config.y, config.sprite, null, config.rotation);
+            this.game.add.existing(vehicle);
+            this.game.physics.enable(vehicle, Phaser.Physics.ARCADE);
+            vehicle.body.immovable = true;
+            this.vehicles.push(vehicle);
         });
     }
 }
