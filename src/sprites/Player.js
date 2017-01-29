@@ -60,6 +60,15 @@ class Player extends Human {
         } else {
             this.switchWeapon(this.weaponList[0]);
         }
+
+        // TODO: This only changes the sprite size on weapon change. Change this code to run any time there is a change.
+        let bodyHeight = this.body.height,
+            bodyWidth = this.body.width,
+            spriteWidth = this.width,
+            spriteHeight = this.height;
+
+        this.body.setSize(bodyWidth, bodyHeight, spriteWidth * 0.5 - bodyWidth * 0.5,
+            spriteHeight * 0.5 - bodyHeight * 0.5);
     }
 
     shootWeapon() {
