@@ -12,6 +12,17 @@ export default class extends Phaser.State {
         //this.game.world.scale.setTo(.35);
         const bannerText = 'EastWorld';
         let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText);
+        this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+        this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        this.game.scale.refresh();
+
+        let canvasWidth = window.innerWidth * window.devicePixelRatio,
+            canvasHeight = window.innerHeight * window.devicePixelRatio,
+            aspectRatio = canvasWidth / canvasHeight,
+            canvasWidthMax = 2048,
+            canvasHeightMax = 2048,
+            scaleRatio = aspectRatio > 1 ? canvasHeight / canvasHeightMax : canvasWidth / canvasWidthMax;
+
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
         this.levelLoader = new LevelLoader(this);
         this.world.setBounds(-256, -256, 5120, 5120 + 4096 + 2048 + 1024 + 256);
