@@ -29,32 +29,32 @@ export default class LevelLoader {
                 sprite: 'car',
                 x: 4212,
                 y: 5632,
-                rotation: 0
+                rotation: this.game.math.degToRad(270)
             },
             {
                 sprite: 'pagani',
                 x: 3996,
                 y: 5632,
-                rotation: 0
+                rotation: this.game.math.degToRad(270)
             },
             {
                 sprite: 'hyundai',
                 x: 400,
                 y: 5632,
-                rotation: 0
+                rotation: this.game.math.degToRad(270)
             },
             {
                 sprite: 'police_car',
                 x: 1150,
                 y: 2074,
-                rotation: 0
+                rotation: this.game.math.degToRad(270)
 
             },
             {
                 sprite: 'atv',
                 x: 620,
                 y: 5632,
-                rotation: 0
+                rotation: this.game.math.degToRad(270)
             },
         ];
         _.each(vehicleList, config => {
@@ -62,6 +62,7 @@ export default class LevelLoader {
             this.game.add.existing(vehicle);
             this.game.physics.enable(vehicle, Phaser.Physics.ARCADE);
             vehicle.body.immovable = true;
+            vehicle.bringToTop();
             this.vehicles.push(vehicle);
         });
     }

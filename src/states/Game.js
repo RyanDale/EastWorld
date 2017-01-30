@@ -30,7 +30,7 @@ export default class extends Phaser.State {
             ai.movePlayer();
         });
 
-        let playerSprite = new Player(this.game, this.game.world.centerX, this.game.world.centerY - 2048,
+        let playerSprite = new Player(this.game, this.game.world.centerX - 1800, this.game.world.centerY - 1024,
             'player_sprite', 'idle');
         this.game.add.existing(playerSprite);
         this.player = playerSprite;
@@ -51,6 +51,7 @@ export default class extends Phaser.State {
     update() {
         this.player.body.velocity.setTo(0, 0);
         this.player.body.angularVelocity = 0;
+
         if (this.cursors.up.isDown) {
             this.player.body.velocity.copyFrom(this.game.physics.arcade.velocityFromAngle(this.player.angle, 300));
             this.player.startAnimation('walking');
@@ -67,7 +68,13 @@ export default class extends Phaser.State {
         }
 
         this.physics.arcade.collide(this.player, _.filter(this.levelLoader.tiles, 'collide'), () => {}, null, this);
-        this.physics.arcade.collide(this.player, this.levelLoader.vehicles, () => {}, null, this);
+        this.physics.arcade.collide(this.levelLoader.vehicles, _.filter(this.levelLoader.tiles, 'collide'), () => {}, null, this);
+        this.physics.arcade.collide(_.filter(AI.ai, 'alive'), _.filter(this.levelLoader.vehicles, 'speed'), ai => {
+            ai.killPlayer();
+        }, null, this);
+        this.physics.arcade.collide(this.player, this.levelLoader.vehicles, (player, vehicle) => {
+            vehicle.startVehicle();
+        }, null, this);
     }
 
     render() {
