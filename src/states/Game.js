@@ -73,8 +73,10 @@ export default class extends Phaser.State {
         this.physics.arcade.collide(_.filter(AI.ai, 'alive'), _.filter(this.levelLoader.vehicles, 'speed'), ai => {
             ai.killPlayer();
         }, null, this);
-        this.physics.arcade.collide(this.player, this.levelLoader.vehicles, (player, vehicle) => {
+        this.physics.arcade.collide(this.player,  _.reject(this.levelLoader.vehicles, 'speed'), (player, vehicle) => {
             vehicle.startVehicle();
+            let q = game.input.keyboard.addKey(Phaser.Keyboard.Q);
+            q.onDown.add(() => vehicle.exitVehicle(), this);
         }, null, this);
     }
 

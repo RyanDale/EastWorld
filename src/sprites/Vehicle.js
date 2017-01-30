@@ -17,9 +17,22 @@ export default class Vehicle extends Sprite {
     }
 
     startVehicle() {
+        this.addChild(this.game.player);
         this.body.immovable = false;
         this.engineStarted = true;
         this.game.camera.follow(this);
+    }
+
+    exitVehicle() {
+        let player = this.game.player;
+        this.removeChild(player);
+        this.game.add.existing(player);
+        this.game.camera.follow(player);
+        player.x = this.x + this.width;
+        player.y = this.y + this.height;
+        this.engineStarted = false;
+        this.speed = 0;
+        this.body.immovable = true;
     }
 
     update() {
