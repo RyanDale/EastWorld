@@ -83,12 +83,8 @@ class Player extends Human {
     update() {
         if (this.weapon) {
             this.game.physics.arcade.overlap(this.weapon.bullets, _.filter(AI.ai, 'alive'), (enemy, bullet) => {
-                let removeEnemy = () => {
-                    enemy.kill();
-                };
                 bullet.kill();
                 enemy.killPlayer();
-                this.game.time.events.add(Phaser.Timer.SECOND * 5, removeEnemy, this);
             });
         }
     }

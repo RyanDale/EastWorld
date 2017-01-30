@@ -56,6 +56,7 @@ class Human extends Phaser.Sprite {
         bloodSplatter.anchor.setTo(0.5, 0.5);
         bloodSplatter.angle = this.game.rnd.integerInRange(0, 359);
         this.addChild(bloodSplatter);
+        this.game.time.events.add(Phaser.Timer.SECOND * 5, this.kill, this);
     }
 }
 
