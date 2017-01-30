@@ -29,40 +29,45 @@ export default class LevelLoader {
                 sprite: 'car',
                 x: 4212,
                 y: 5632,
-                rotation: this.game.math.degToRad(270)
+                rotation: this.game.math.degToRad(270),
+                maxSpeed: 450
             },
             {
                 sprite: 'pagani',
                 x: 3996,
                 y: 5632,
-                rotation: this.game.math.degToRad(270)
+                rotation: this.game.math.degToRad(270),
+                maxSpeed: 700
             },
             {
                 sprite: 'hyundai',
                 x: 400,
                 y: 5632,
-                rotation: this.game.math.degToRad(270)
+                rotation: this.game.math.degToRad(270),
+                maxSpeed: 500
             },
             {
                 sprite: 'police_car',
                 x: 1150,
                 y: 2074,
-                rotation: this.game.math.degToRad(270)
+                rotation: this.game.math.degToRad(270),
+                maxSpeed: 600
 
             },
             {
                 sprite: 'atv',
                 x: 620,
                 y: 5632,
-                rotation: this.game.math.degToRad(270)
+                rotation: this.game.math.degToRad(270),
+                maxSpeed: 350
             },
         ];
         _.each(vehicleList, config => {
-            let vehicle = new Vehicle(this.game, config.x, config.y, config.sprite, null, config.rotation);
+            let vehicle = new Vehicle(this.game, config.x, config.y, config.sprite, null, config.rotation,
+                config.maxSpeed);
             this.game.add.existing(vehicle);
             this.game.physics.enable(vehicle, Phaser.Physics.ARCADE);
             vehicle.body.immovable = true;
-            vehicle.bringToTop();
             this.vehicles.push(vehicle);
         });
     }

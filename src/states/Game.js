@@ -69,6 +69,7 @@ export default class extends Phaser.State {
 
         this.physics.arcade.collide(this.player, _.filter(this.levelLoader.tiles, 'collide'), () => {}, null, this);
         this.physics.arcade.collide(this.levelLoader.vehicles, _.filter(this.levelLoader.tiles, 'collide'), () => {}, null, this);
+        this.physics.arcade.collide(..._.partition(this.levelLoader.vehicles, 'speed'));
         this.physics.arcade.collide(_.filter(AI.ai, 'alive'), _.filter(this.levelLoader.vehicles, 'speed'), ai => {
             ai.killPlayer();
         }, null, this);

@@ -41,7 +41,7 @@ export default class Vehicle extends Sprite {
             this.speed = this.maxSpeed;
         } else {
             if (this.speed > 0) {
-                this.speed -= 4;
+                this.speed -= 2;
                 this.speed = Math.max(this.speed, 0);
             }
         }
