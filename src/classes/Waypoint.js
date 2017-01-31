@@ -9,13 +9,8 @@ class WayPoint {
         }
     }
 
-    static random() {
-        return _.sample(WayPoint.wayPoints);
-    }
-
     static randomWalkable() {
-        // TODO: Rewrite to not use hard coded number.
-        return _(WayPoint.wayPoints).filter(wayPoint => wayPoint.position.y <= 5211).sample();
+        return _.sample(WayPoint.wayPoints);
     }
 }
 
