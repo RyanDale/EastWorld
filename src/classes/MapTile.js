@@ -1,5 +1,5 @@
-import Phaser from 'phaser'
-import Waypoint from './Waypoint'
+import Phaser from 'phaser';
+import Waypoint from './Waypoint';
 
 export default class MapTile extends Phaser.Sprite {
     constructor(game, x = 0, y = 0, key = null, frame = null, rotation = 0) {

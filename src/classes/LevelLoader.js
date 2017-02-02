@@ -1,5 +1,5 @@
-import MapTile from './MapTile'
-import Vehicle from '../sprites/Vehicle'
+import MapTile from './MapTile';
+import Vehicle from '../sprites/Vehicle';
 
 export default class LevelLoader {
     constructor(game) {
@@ -9,7 +9,45 @@ export default class LevelLoader {
 
     loadLevel() {
         let level = this.game.cache.getJSON('level'),
-            scaler = 512;
+            scaler = 512,
+            vehicleList = [
+                {
+                    sprite: 'car',
+                    x: 4212,
+                    y: 5632,
+                    rotation: this.game.math.degToRad(270),
+                    maxSpeed: 450
+                },
+                {
+                    sprite: 'pagani',
+                    x: 3996,
+                    y: 5632,
+                    rotation: this.game.math.degToRad(270),
+                    maxSpeed: 700
+                },
+                {
+                    sprite: 'hyundai',
+                    x: 400,
+                    y: 5632,
+                    rotation: this.game.math.degToRad(270),
+                    maxSpeed: 500
+                },
+                {
+                    sprite: 'police_car',
+                    x: 1150,
+                    y: 2074,
+                    rotation: this.game.math.degToRad(270),
+                    maxSpeed: 600
+
+                },
+                {
+                    sprite: 'atv',
+                    x: 620,
+                    y: 5632,
+                    rotation: this.game.math.degToRad(270),
+                    maxSpeed: 350
+                }
+            ];
 
         this.tiles = [];
         this.vehicles = [];
@@ -24,44 +62,7 @@ export default class LevelLoader {
                 this.tiles.push(mapTile);
             });
         });
-        let vehicleList = [
-            {
-                sprite: 'car',
-                x: 4212,
-                y: 5632,
-                rotation: this.game.math.degToRad(270),
-                maxSpeed: 450
-            },
-            {
-                sprite: 'pagani',
-                x: 3996,
-                y: 5632,
-                rotation: this.game.math.degToRad(270),
-                maxSpeed: 700
-            },
-            {
-                sprite: 'hyundai',
-                x: 400,
-                y: 5632,
-                rotation: this.game.math.degToRad(270),
-                maxSpeed: 500
-            },
-            {
-                sprite: 'police_car',
-                x: 1150,
-                y: 2074,
-                rotation: this.game.math.degToRad(270),
-                maxSpeed: 600
 
-            },
-            {
-                sprite: 'atv',
-                x: 620,
-                y: 5632,
-                rotation: this.game.math.degToRad(270),
-                maxSpeed: 350
-            },
-        ];
         _.each(vehicleList, config => {
             let vehicle = new Vehicle(this.game, config.x, config.y, config.sprite, null, config.rotation,
                 config.maxSpeed);

@@ -1,4 +1,4 @@
-import {Phaser, Point} from 'phaser'
+import {Point} from 'phaser';
 
 class WayPoint {
     constructor(x = 0, y = 0) {
@@ -16,4 +16,4 @@ class WayPoint {
 
 WayPoint.wayPoints = [];
 
-export default WayPoint
+export default WayPoint;
