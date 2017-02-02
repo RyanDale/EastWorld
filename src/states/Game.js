@@ -1,7 +1,7 @@
-import {Phaser, Point} from 'phaser'
-import LevelLoader from '../classes/LevelLoader'
-import Player from '../sprites/Player'
-import AI from '../sprites/AI'
+import {Phaser} from 'phaser';
+import LevelLoader from '../classes/LevelLoader';
+import Player from '../sprites/Player';
+import AI from '../sprites/AI';
 
 export default class extends Phaser.State {
     preload() {
@@ -9,19 +9,19 @@ export default class extends Phaser.State {
     }
 
     create() {
-        //this.game.world.scale.setTo(.35);
+        // this.game.world.scale.setTo(.35);
         const bannerText = 'EastWorld';
-        let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText);
-        this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
-        this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-        this.game.scale.refresh();
-
-        let canvasWidth = window.innerWidth * window.devicePixelRatio,
+        let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText),
+            canvasWidth = window.innerWidth * window.devicePixelRatio,
             canvasHeight = window.innerHeight * window.devicePixelRatio,
             aspectRatio = canvasWidth / canvasHeight,
             canvasWidthMax = 2048,
             canvasHeightMax = 2048,
             scaleRatio = aspectRatio > 1 ? canvasHeight / canvasHeightMax : canvasWidth / canvasWidthMax;
+
+        this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+        this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        this.game.scale.refresh();
 
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
         this.levelLoader = new LevelLoader(this);
@@ -50,9 +50,9 @@ export default class extends Phaser.State {
 
         this.camera.follow(playerSprite);
 
-        let shift = game.input.keyboard.addKey(Phaser.Keyboard.SHIFT);
+        let shift = this.input.keyboard.addKey(Phaser.Keyboard.SHIFT);
         shift.onDown.add(() => this.player.cycleWeapon(), this);
-        let enter = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+        let enter = this.input.keyboard.addKey(Phaser.Keyboard.ENTER);
         enter.onDown.add(() => this.player.shootWeapon(), this);
 
         this.physics.arcade.enable(this.player);
@@ -70,23 +70,23 @@ export default class extends Phaser.State {
 
         if (this.cursors.left.isDown) {
             this.player.body.angularVelocity = -300;
-        }
-        else if (this.cursors.right.isDown) {
+        } else if (this.cursors.right.isDown) {
             this.player.body.angularVelocity = 300;
-        }
-        else {
+        } else {
             this.player.body.angularVelocity = 0;
         }
 
-        this.physics.arcade.collide(this.player, _.filter(this.levelLoader.tiles, 'collide'), () => {}, null, this);
-        this.physics.arcade.collide(this.levelLoader.vehicles, _.filter(this.levelLoader.tiles, 'collide'), () => {}, null, this);
+        this.physics.arcade.collide(this.player, _.filter(this.levelLoader.tiles, 'collide'), () => {
+        }, null, this);
+        this.physics.arcade.collide(this.levelLoader.vehicles, _.filter(this.levelLoader.tiles, 'collide'), () => {
+        }, null, this);
         this.physics.arcade.collide(..._.partition(this.levelLoader.vehicles, 'speed'));
         this.physics.arcade.collide(_.filter(AI.ai, 'alive'), _.filter(this.levelLoader.vehicles, 'speed'), ai => {
             ai.killPlayer();
         }, null, this);
-        this.physics.arcade.collide(this.player,  _.reject(this.levelLoader.vehicles, 'speed'), (player, vehicle) => {
+        this.physics.arcade.collide(this.player, _.reject(this.levelLoader.vehicles, 'speed'), (player, vehicle) => {
             vehicle.startVehicle();
-            let q = game.input.keyboard.addKey(Phaser.Keyboard.Q);
+            let q = this.game.input.keyboard.addKey(Phaser.Keyboard.Q);
             q.onDown.add(() => vehicle.exitVehicle(), this);
         }, null, this);
     }
