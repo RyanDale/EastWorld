@@ -1,0 +1,17 @@
+{
+  "extends": "standard",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-extra-semi": 0,
+    "semi": ["error", "always"],
+    "no-mixed-spaces-and-tabs": 0,
+    "indent": [2, 4],
+    "space-before-function-paren": ["error", "never"]
+  },
+  "globals": {
+    "_": true
+  }
+}
