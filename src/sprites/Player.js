@@ -1,8 +1,8 @@
-import Phaser from 'phaser'
-import AI from './AI'
-import Human from './Human'
+import Phaser from 'phaser';
+import AI from './AI';
+import Human from './Human';
 
-class Player extends Human {
+export default class Player extends Human {
     constructor(game, x, y, asset, frame) {
         super(game, x, y, asset, frame);
         this.activeWeapon = null;
@@ -19,9 +19,9 @@ class Player extends Human {
 
     startAnimation(animation) {
         switch (animation) {
-            case 'walking':
-                this.startWalking();
-                break;
+        case 'walking':
+            this.startWalking();
+            break;
         }
     }
 
@@ -46,7 +46,6 @@ class Player extends Human {
         this.weapon.bulletAngleOffset = 90;
         this.weapon.bulletAngleVariance = 5;
         this.weapon.enableBody = true;
-
     }
 
     cycleWeapon() {
@@ -89,5 +88,3 @@ class Player extends Human {
         }
     }
 }
-
-export default Player;

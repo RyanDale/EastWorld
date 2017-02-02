@@ -1,4 +1,4 @@
-import {Phaser, Point, Rectangle, Sprite} from 'phaser'
+import {Phaser, Sprite} from 'phaser';
 
 export default class Vehicle extends Sprite {
     constructor(game, x, y, asset, frame, rotation, maxSpeed = 500) {

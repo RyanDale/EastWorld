@@ -1,6 +1,6 @@
-import {Phaser, Sprite} from 'phaser'
+import {Phaser, Sprite} from 'phaser';
 
-class Human extends Phaser.Sprite {
+export default class Human extends Phaser.Sprite {
     constructor(game, x, y, asset, frame) {
         super(game, x, y, asset, frame);
         this.activeWeapon = null;
@@ -30,11 +30,11 @@ class Human extends Phaser.Sprite {
 
     startAnimation(animation, repeat = false) {
         switch (animation) {
-            case 'walking':
-                this.startWalking(repeat);
-                break;
-            default:
-                this.animations.play(animation, 8, repeat);
+        case 'walking':
+            this.startWalking(repeat);
+            break;
+        default:
+            this.animations.play(animation, 8, repeat);
         }
     }
 
@@ -59,5 +59,3 @@ class Human extends Phaser.Sprite {
         this.game.time.events.add(Phaser.Timer.SECOND * 5, this.kill, this);
     }
 }
-
-export default Human;

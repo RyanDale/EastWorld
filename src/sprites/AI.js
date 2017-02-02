@@ -1,6 +1,6 @@
-import {Phaser, Point, Rectangle} from 'phaser'
-import Waypoint from '../classes/Waypoint'
-import Human from './Human'
+import {Point, Rectangle} from 'phaser';
+import Waypoint from '../classes/Waypoint';
+import Human from './Human';
 
 export default class AI extends Human {
 
@@ -68,8 +68,9 @@ export default class AI extends Human {
         if (new Rectangle(this.wayPoint.position.x - 4, this.wayPoint.position.y - 4, 8, 8).contains(this.position.x,
                 this.position.y)) {
             this.position = _.clone(this.wayPoint.position);
-            this.wayPoint = this.findDistance(this.findPoints().filter(point => point.position.x !== this.position.x || point.position.y !== this.position.y));
-            if (this.position.x == this.target.position.x && this.position.y == this.target.position.y) {
+            this.wayPoint = this.findDistance(this.findPoints().filter(point => point.position.x !== this.position.x ||
+            point.position.y !== this.position.y));
+            if (this.position.x === this.target.position.x && this.position.y === this.target.position.y) {
                 this.generateNewTarget();
             }
             this.movePlayer();
