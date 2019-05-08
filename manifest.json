@@ -1,0 +1,10 @@
+{
+    "short_name": "EastWorld",
+    "name": "EastWorld",
+    "icons": [],
+    "start_url": "/?source=pwa",
+    "background_color": "#dd550c",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#dd550c"
+  }
