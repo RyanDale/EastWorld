@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "webpack",
     "deploy": "webpack --config webpack.production.config.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run deploy"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run deploy",
+    "start": "node index.js"
   },
   "license": "MIT",
   "devDependencies": {
@@ -25,8 +26,11 @@
     "webpack": "^2.2.0"
   },
   "dependencies": {
+    "connect": "^3.6.6",
+    "dotenv": "^8.0.0",
     "lodash": "^4.17.4",
     "phaser-ce": "2.7.3",
+    "serve-static": "^1.13.2",
     "webfontloader": "^1.6.27"
   }
 }
