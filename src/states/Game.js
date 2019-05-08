@@ -46,6 +46,9 @@ export default class extends Phaser.State {
         this.player = playerSprite;
 
         this.game.time.advancedTiming = true;
+        this.game.input.addPointer();
+        this.game.input.addPointer();
+        this.game.input.addPointer();
 
         this.camera.follow(playerSprite);
 
