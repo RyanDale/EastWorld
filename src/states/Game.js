@@ -46,6 +46,8 @@ export default class extends Phaser.State {
         this.player = playerSprite;
 
         this.game.time.advancedTiming = true;
+
+        // Add pointers to support multi touch on mobile
         this.game.input.addPointer();
         this.game.input.addPointer();
         this.game.input.addPointer();
