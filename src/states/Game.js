@@ -14,6 +14,8 @@ export default class extends Phaser.State {
         // this.game.world.scale.setTo(.35);
         const bannerText = 'EastWorld';
         let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText);
+ 
+        let uiScale = Math.min(Math.max(Math.max(window.innerHeight, window.innerWidth) / 1920, .6), 1);
 
         let scaleOption = Phaser.ScaleManager.RESIZE;
         this.game.scale.fullScreenScaleMode = scaleOption;
@@ -47,14 +49,16 @@ export default class extends Phaser.State {
 
         this.camera.follow(playerSprite);
 
+        let offset = uiScale * 100;
+
         var gamepad = this.game.plugins.add(Phaser.Plugin.VirtualGamepad);
         let windowHeight = window.innerHeight;
-        this.joystick = gamepad.addJoystick(window.innerWidth - 100, windowHeight - 100, 1, 'gamepad');
-        this.shootButton = gamepad.addButton(100, windowHeight - 100, 1, 'gamepad');
-        gamepad.addButton(100, windowHeight - 100, 1, 'gamepad');
+        this.joystick = gamepad.addJoystick(window.innerWidth - offset, windowHeight - offset, uiScale, 'gamepad');
+        this.shootButton = gamepad.addButton(offset, windowHeight - offset, uiScale, 'gamepad');
+        gamepad.addButton(offset, windowHeight - offset, uiScale, 'gamepad');
 
         var group = game.add.group();
-        var button = this.game.add.button(50, windowHeight - 275, 'gamepad', button => {
+        var button = this.game.add.button(offset / 2, windowHeight - (275 * uiScale), 'gamepad', button => {
             this.player.cycleWeapon();
             button.frame = 1;
         }, this);
@@ -62,14 +66,16 @@ export default class extends Phaser.State {
         button.onInputUp.add(button => {
             setTimeout(() => button.frame = 0, 100);
         }, this);
+        button.scale.setTo(uiScale, uiScale);
         group.add(button);
 
-        button = this.game.add.button(50, windowHeight - 400, 'gamepad', button => button.frame = 1, this);
+        button = this.game.add.button(offset / 2, windowHeight - (400 * uiScale), 'gamepad', button => button.frame = 1, this);
         button.fixedToCamera = true;
         button.onInputUp.add(button => {
             setTimeout(() => button.frame = 0, 100);
         }, this);
         button.visible = false;
+        button.scale.setTo(uiScale, uiScale);
         this.exitVehicleButton = button;
         group.add(button);
 
