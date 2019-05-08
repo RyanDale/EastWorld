@@ -1,26 +1,23 @@
-import {Phaser} from 'phaser';
+import { Phaser } from 'phaser';
+import {} from '../libs/phaser-plugin-virtual-gamepad';
 import LevelLoader from '../classes/LevelLoader';
 import Player from '../sprites/Player';
 import AI from '../sprites/AI';
 
 export default class extends Phaser.State {
     preload() {
+        this.load.spritesheet('gamepad', 'assets/images/gamepad_spritesheet.png', 100, 100);
         this.game.load.atlas('player_sprite', 'assets/images/player_sprites.png', 'assets/images/player_sprites.json', Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
     }
 
     create() {
         // this.game.world.scale.setTo(.35);
         const bannerText = 'EastWorld';
-        let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText),
-            canvasWidth = window.innerWidth * window.devicePixelRatio,
-            canvasHeight = window.innerHeight * window.devicePixelRatio,
-            aspectRatio = canvasWidth / canvasHeight,
-            canvasWidthMax = 2048,
-            canvasHeightMax = 2048,
-            scaleRatio = aspectRatio > 1 ? canvasHeight / canvasHeightMax : canvasWidth / canvasWidthMax;
+        let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText);
 
-        this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
-        this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        let scaleOption = Phaser.ScaleManager.RESIZE;
+        this.game.scale.fullScreenScaleMode = scaleOption;
+        this.game.scale.scaleMode = scaleOption;
         this.game.scale.refresh();
 
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -50,6 +47,32 @@ export default class extends Phaser.State {
 
         this.camera.follow(playerSprite);
 
+        var gamepad = this.game.plugins.add(Phaser.Plugin.VirtualGamepad);
+        let windowHeight = window.innerHeight;
+        this.joystick = gamepad.addJoystick(window.innerWidth - 100, windowHeight - 100, 1, 'gamepad');
+        this.shootButton = gamepad.addButton(100, windowHeight - 100, 1, 'gamepad');
+        gamepad.addButton(100, windowHeight - 100, 1, 'gamepad');
+
+        var group = game.add.group();
+        var button = this.game.add.button(50, windowHeight - 275, 'gamepad', button => {
+            this.player.cycleWeapon();
+            button.frame = 1;
+        }, this);
+        button.fixedToCamera = true;
+        button.onInputUp.add(button => {
+            setTimeout(() => button.frame = 0, 100);
+        }, this);
+        group.add(button);
+
+        button = this.game.add.button(50, windowHeight - 400, 'gamepad', button => button.frame = 1, this);
+        button.fixedToCamera = true;
+        button.onInputUp.add(button => {
+            setTimeout(() => button.frame = 0, 100);
+        }, this);
+        button.visible = false;
+        this.exitVehicleButton = button;
+        group.add(button);
+
         let shift = this.input.keyboard.addKey(Phaser.Keyboard.SHIFT);
         shift.onDown.add(() => this.player.cycleWeapon(), this);
         let enter = this.input.keyboard.addKey(Phaser.Keyboard.ENTER);
@@ -59,21 +82,45 @@ export default class extends Phaser.State {
         this.physics.enable(this.player, Phaser.Physics.ARCADE);
     }
 
-    update() {
-        this.player.body.velocity.setTo(0, 0);
-        this.player.body.angularVelocity = 0;
-
-        if (this.cursors.up.isDown) {
+    movePlayer(direction) {
+        if (direction === 'forward') {
             this.player.body.velocity.copyFrom(this.game.physics.arcade.velocityFromAngle(this.player.angle, 300));
             this.player.startAnimation('walking');
         }
 
-        if (this.cursors.left.isDown) {
+        if (direction === 'left') {
             this.player.body.angularVelocity = -300;
-        } else if (this.cursors.right.isDown) {
+        } else if (direction === 'right') {
             this.player.body.angularVelocity = 300;
         } else {
             this.player.body.angularVelocity = 0;
+        }
+    }
+
+    update() {
+        this.player.body.velocity.setTo(0, 0);
+        this.player.body.angularVelocity = 0;
+
+        if (this.joystick.properties.inUse) {
+            this.player.angle = this.joystick.properties.angle;
+            this.player.body.velocity.copyFrom(this.game.physics.arcade.velocityFromAngle(this.joystick.properties.angle, 300));
+            this.player.startAnimation('walking');
+        }
+
+        if(this.shootButton.isDown) {
+            this.player.shootWeapon();
+        }
+
+        if (this.cursors.up.isDown) {
+            this.movePlayer('forward');
+        }
+
+        if (this.cursors.left.isDown) {
+            this.movePlayer('left');
+        } else if (this.cursors.right.isDown) {
+            this.movePlayer('right');
+        } else {
+            this.movePlayer();
         }
 
         this.physics.arcade.collide(this.player, _.filter(this.levelLoader.tiles, 'collide'), () => {
@@ -86,8 +133,13 @@ export default class extends Phaser.State {
         }, null, this);
         this.physics.arcade.collide(this.player, _.reject(this.levelLoader.vehicles, 'speed'), (player, vehicle) => {
             vehicle.startVehicle();
+            this.exitVehicleButton.visible = true;
             let q = this.game.input.keyboard.addKey(Phaser.Keyboard.Q);
             q.onDown.add(() => vehicle.exitVehicle(), this);
+            this.exitVehicleButton.onInputDown.add(() => {
+                vehicle.exitVehicle();
+                this.exitVehicleButton.visible = false;
+            })
         }, null, this);
     }
 
