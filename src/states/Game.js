@@ -48,6 +48,15 @@ export default class extends Phaser.State {
         this.game.add.existing(playerSprite);
         this.player = playerSprite;
 
+        this.scoreText = this.game.add.text(window.innerWidth / 2, 64, `$0.00`);
+        this.scoreText.anchor.setTo(0.5);
+    
+        this.scoreText.font = 'Roboto';
+        this.scoreText.fontSize = 60;
+        this.scoreText.stroke = '#fff';
+        this.scoreText.strokeThickness = 2;
+        this.scoreText.fixedToCamera = true;
+
         this.game.time.advancedTiming = true;
 
         _.times(10, () => {
@@ -150,11 +159,16 @@ export default class extends Phaser.State {
         this.physics.arcade.collide(..._.partition(this.levelLoader.vehicles, 'speed'));
         this.physics.arcade.collide(_.filter(AI.ai, 'alive'), _.filter(this.levelLoader.vehicles, 'speed'), ai => {
             ai.killPlayer();
+            this.player.addScore(100);
         }, null, this);
         this.physics.arcade.collide(_.get(this, 'player.weapon.bullets'), MoneyStack.moneyStacks, (moneyStack, bullet) => {
             bullet.kill();
             moneyStack.destroy();
             this.createExplosion(moneyStack.position.x, moneyStack.position.y);
+        }, null, this);
+        this.physics.arcade.collide(this.player, MoneyStack.moneyStacks, (player, moneyStack) => {
+            moneyStack.destroy();
+            this.player.addScore(1000);
         }, null, this);
         this.physics.arcade.collide(_.get(this, 'player.weapon.bullets'), this.levelLoader.vehicles, (vehicle, bullet) => {
             bullet.kill();

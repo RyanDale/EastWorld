@@ -15,6 +15,7 @@ export default class Player extends Human {
             'uzi'
         ];
         this.loadAnimations();
+        this.money = 0;
     }
 
     startAnimation(animation) {
@@ -84,7 +85,13 @@ export default class Player extends Human {
             this.game.physics.arcade.overlap(this.weapon.bullets, _.filter(AI.ai, 'alive'), (enemy, bullet) => {
                 bullet.kill();
                 enemy.killPlayer();
+                this.addScore(100);
             });
         }
+    }
+
+    addScore(newScore) {
+        this.money += newScore;
+        this.game.state.getCurrentState().scoreText.setText(`$${this.money.toFixed(2)}`);
     }
 }

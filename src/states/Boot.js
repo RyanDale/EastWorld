@@ -11,13 +11,13 @@ export default class extends Phaser.State {
     preload() {
         WebFont.load({
             google: {
-                families: ['Bangers']
+                families: ['Roboto']
             },
             active: this.fontsLoaded
         });
 
         let text = this.add.text(this.world.centerX, this.world.centerY, 'EastWorld is loading.', {
-            font: '32px Arial',
+            font: '32px Roboto',
             fill: '#03244d',
             align: 'center'
         });
