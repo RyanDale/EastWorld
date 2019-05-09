@@ -46,8 +46,6 @@ export default class extends Phaser.State {
         this.load.image('houseTwoTile', 'assets/images/tiles/houseTwo.png');
         this.load.image('houseThreeTile', 'assets/images/tiles/houseThree.png');
 
-        this.load.image('explosion', 'assets/images/explosion_sprites.png');
-
         this.load.image('atv', 'assets/images/vehicles/atv.png');
         this.load.image('car', 'assets/images/vehicles/car.png');
         this.load.image('hyundai', 'assets/images/vehicles/hyundai.png');

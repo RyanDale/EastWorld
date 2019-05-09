@@ -8,6 +8,7 @@ export default class extends Phaser.State {
     preload() {
         this.load.spritesheet('gamepad', 'assets/images/gamepad_spritesheet.png', 100, 100);
         this.game.load.atlas('player_sprite', 'assets/images/player_sprites.png', 'assets/images/player_sprites.json', Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
+        this.game.load.atlas('explosion', 'assets/images/explosion_sprites.png', 'assets/images/explosion_sprites.json', Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
     }
 
     create() {
@@ -142,6 +143,10 @@ export default class extends Phaser.State {
         this.physics.arcade.collide(_.filter(AI.ai, 'alive'), _.filter(this.levelLoader.vehicles, 'speed'), ai => {
             ai.killPlayer();
         }, null, this);
+        this.physics.arcade.collide(_.get(this, 'player.weapon.bullets'), this.levelLoader.vehicles, (vehicle, bullet) => {
+            bullet.kill();
+            this.createExplosion(bullet.position.x, bullet.position.y);
+        }, null, this);
         this.physics.arcade.collide(this.player, _.reject(this.levelLoader.vehicles, 'speed'), (player, vehicle) => {
             vehicle.startVehicle();
             this.exitVehicleButton.visible = true;
@@ -161,5 +166,13 @@ export default class extends Phaser.State {
             this.game.debug.body(this.player);
             this.levelLoader.tiles.filter(tile => tile.collide).forEach(tile => this.game.debug.body(tile));
         }
+    }
+
+    createExplosion(x, y) {
+        let explosion = new Phaser.Sprite(this.game, x, y, 'explosion');
+        explosion.animations.add('flame', Phaser.Animation.generateFrameNames('explosion', 1, 36), 8, true);
+        explosion.anchor.setTo(0.5, 0.5);
+        this.game.add.existing(explosion);
+        explosion.animations.play('flame', 24, false);
     }
 }
