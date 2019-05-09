@@ -53,6 +53,8 @@ export default class extends Phaser.State {
         this.load.image('police_car', 'assets/images/vehicles/police_car.png');
         this.load.image('police_car2', 'assets/images/vehicles/police_car2.png');
 
+        this.load.image('moneyStack', 'assets/images/money.png');
+
         // Load explosions
         _.times(36, i => this.load.image(`explosion${(i + 1)}`, `assets/images/explosion/Explosion${(i + 1)}.png`));
 

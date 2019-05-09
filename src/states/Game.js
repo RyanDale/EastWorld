@@ -3,6 +3,8 @@ import {} from '../libs/phaser-plugin-virtual-gamepad';
 import LevelLoader from '../classes/LevelLoader';
 import Player from '../sprites/Player';
 import AI from '../sprites/AI';
+import MoneyStack from '../sprites/MoneyStack';
+import Waypoint from '../classes/Waypoint';
 
 export default class extends Phaser.State {
     preload() {
@@ -47,6 +49,12 @@ export default class extends Phaser.State {
         this.player = playerSprite;
 
         this.game.time.advancedTiming = true;
+
+        _.times(10, () => {
+            let position = Waypoint.randomWalkable().position;
+            let moneyStack = new MoneyStack(this.game, position.x, position.y, 'moneyStack');
+            this.game.add.existing(moneyStack);
+        });
 
         // Add pointers to support multi touch on mobile
         this.game.input.addPointer();
@@ -142,6 +150,11 @@ export default class extends Phaser.State {
         this.physics.arcade.collide(..._.partition(this.levelLoader.vehicles, 'speed'));
         this.physics.arcade.collide(_.filter(AI.ai, 'alive'), _.filter(this.levelLoader.vehicles, 'speed'), ai => {
             ai.killPlayer();
+        }, null, this);
+        this.physics.arcade.collide(_.get(this, 'player.weapon.bullets'), MoneyStack.moneyStacks, (moneyStack, bullet) => {
+            bullet.kill();
+            moneyStack.destroy();
+            this.createExplosion(moneyStack.position.x, moneyStack.position.y);
         }, null, this);
         this.physics.arcade.collide(_.get(this, 'player.weapon.bullets'), this.levelLoader.vehicles, (vehicle, bullet) => {
             bullet.kill();
