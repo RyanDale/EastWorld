@@ -187,5 +187,6 @@ export default class extends Phaser.State {
         explosion.anchor.setTo(0.5, 0.5);
         this.game.add.existing(explosion);
         explosion.animations.play('flame', 24, false);
+        this.game.time.events.add(Phaser.Timer.SECOND * 5, () => explosion.destroy(), this);
     }
 }
